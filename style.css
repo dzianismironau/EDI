@@ -64,7 +64,7 @@ button {
     border-collapse: collapse;
     width: 100%;
     text-align: center;
-  }
+}
 #airports_table th, td {
     border: 1px solid rgb(21, 88, 88);
     width: 33%;
@@ -72,4 +72,8 @@ button {
     margin-left: 10px;
     padding: 10px;
     width: 10%;
+}
+
+#pie_chart {
+    background-color: #fff;
 }

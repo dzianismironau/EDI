@@ -33,11 +33,11 @@ $(document).ready(function(){
     var private = 0;
     var public = 0;
     var mixed = 0;
-    $.getJSON(API, function(data){
+    $.getJSON('data.json', function(data){
         $.each(data, function(key, value){
-            if (value.ownership === private) {
+            if (value.ownership === 'private') {
                 private += 1;
-            } else if (value.ownership === public) {
+            } else if (value.ownership === 'public') {
                 public += 1;
             } else {
                 mixed += 1;
@@ -55,9 +55,12 @@ $(document).ready(function(){
                     'rgb(255, 99, 132)',
                     'rgb(54, 162, 235)',
                     'rgb(255, 205, 86)'
-                  ],
+                ],
+                bdColor: 'rgb(0, 0, 0)',
+                hoverOffset: 4
             }]
         }
         }
     )
+    $('pie_chart').append(pieChart);
 });
