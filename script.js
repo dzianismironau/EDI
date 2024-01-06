@@ -1,3 +1,5 @@
+//import 'chart.js';
+
 function top_back() {
     window.scrollTo(0,0)
 }
@@ -5,7 +7,7 @@ function top_back() {
 const API = "https://my.api.mockaroo.com/airports.json?key=b5ac6640";
 
 $(document).ready(function(){
-    $.getJSON(API, function(data){
+    $.getJSON('data.json', function(data){
         var airport_data = '';
         var i = 0;
         $.each(data, function(key, value){
@@ -30,37 +32,51 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    var private = 0;
-    var public = 0;
+    var priv = 0;
+    var pub = 0;
     var mixed = 0;
     $.getJSON('data.json', function(data){
         $.each(data, function(key, value){
-            if (value.ownership === 'private') {
-                private += 1;
-            } else if (value.ownership === 'public') {
-                public += 1;
+            if (value.ownership === 'priv') {
+                priv += 1;
+            } else if (value.ownership === 'pub') {
+                pub += 1;
             } else {
                 mixed += 1;
             }
         })
     })
+
+    const ctx = document.getElementById('pie_chart').getContext('2d');
+
     const pieChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: ['private', 'public', 'mixed'],
+            labels: ['priv', 'pub', 'mixed'],
             datasets: [{
                 label: 'Ownership types',
-                data: [private, public, mixed],
+                data: [priv, pub, mixed],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(54, 162, 235)',
                     'rgb(255, 205, 86)'
                 ],
-                bdColor: 'rgb(0, 0, 0)',
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                ],
+                borderWidth: 1,
+    
                 hoverOffset: 4
             }]
         }
         }
     )
-    $('pie_chart').append(pieChart);
+    $('#pie_chart').append(pieChart);
 });
+
+pieChart.canvas.parentNode.style.height = '800px';
+pieChart.canvas.parentNode.style.width = '800px';
+pieChart.canvas.parentNode.style.float = 'right';
+
