@@ -2,8 +2,10 @@ function top_back() {
     window.scrollTo(0,0)
 }
 
+const API = "https://my.api.mockaroo.com/airports.json?key=b5ac6640";
+
 $(document).ready(function(){
-    $.getJSON("data.json", function(data){
+    $.getJSON(API, function(data){
         var airport_data = '';
         var i = 0;
         $.each(data, function(key, value){
