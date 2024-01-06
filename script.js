@@ -28,3 +28,36 @@ $(document).ready(function(){
         $('#airports_table').append(airport_data);
     });
 });
+
+$(document).ready(function(){
+    var private = 0;
+    var public = 0;
+    var mixed = 0;
+    $.getJSON(API, function(data){
+        $.each(data, function(key, value){
+            if (value.ownership === private) {
+                private += 1;
+            } else if (value.ownership === public) {
+                public += 1;
+            } else {
+                mixed += 1;
+            }
+        })
+    })
+    const pieChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['private', 'public', 'mixed'],
+            datasets: [{
+                label: 'Ownership types',
+                data: [private, public, mixed],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                  ],
+            }]
+        }
+        }
+    )
+});
