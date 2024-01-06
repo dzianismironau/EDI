@@ -56,3 +56,20 @@ button {
 }
 
 /* Main */
+
+#airports_table {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgb(21, 88, 88);
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+#airports_table th, td {
+    border: 1px solid rgb(21, 88, 88);
+    width: 33%;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    width: 10%;
+}

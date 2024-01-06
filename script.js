@@ -5,6 +5,7 @@ function top_back() {
 $(document).ready(function(){
     $.getJSON("data.json", function(data){
         var airport_data = '';
+        var i = 0;
         $.each(data, function(key, value){
             airport_data += '<tr>';
             airport_data += '<td>'+value.id+'</td>';
@@ -17,6 +18,10 @@ $(document).ready(function(){
             airport_data += '<td>'+value.busyness+'</td>';
             airport_data += '<td>'+value.ownership+'</td>'
             airport_data += '</tr>';
+            i++;
+            if (i==10) {
+                return false;
+            }
         });
         $('#airports_table').append(airport_data);
     });
