@@ -40,6 +40,11 @@ button {
 /* Header */
 #header-section {
     padding: 40px 0 107px;
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color:#000;
+    z-index: 1;
 }
 .header {
     display: flex;
@@ -50,16 +55,15 @@ button {
 .arrow:hover {
     opacity: 0.8;
 }
-.project_name:hover {
-    cursor: pointer;
-    opacity: 0.8;
-}
+
 
 /* Main */
 
 .table_info {
     font-size: xx-large;
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 #airports_table {
@@ -70,7 +74,7 @@ button {
     width: 100%;
     text-align: center;
 }
-#airports_table th, td {
+#airports_table td {
     border: 1px solid rgb(21, 88, 88);
     width: 33%;
     margin-top: 10px;
@@ -78,7 +82,15 @@ button {
     padding: 10px;
     width: 10%;
 }
-
+#airports_table th {
+    border: 1px solid rgb(21, 88, 88);
+    width: 33%;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    width: 10%;
+    background-color: #2a2929;
+}
 .chart_and_text {
     display: flex;
     flex-direction: column;
@@ -96,22 +108,50 @@ button {
 
 .chart_info {
     margin-bottom: 2px;
+    text-align: center;
 }
 
 #profit_chart {
     vertical-align: text-top;
     display: inline-block;
+    min-width: 350px;
 } 
 #ownership_chart {
     vertical-align: text-top;
     display: inline-block;
+    min-width: 350px;
 }
  
 #busyness_chart {
     vertical-align: text-top;
     display: inline-block;
+    min-width: 350px;
 }
 
 #big_chart {
     width: 100%;
+}
+
+#second_section {
+    margin-top: 30px;
+}
+
+.charts_title {
+    font-size: xx-large;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.last_chart {
+    font-size: xx-large;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
