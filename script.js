@@ -20,7 +20,7 @@ let averageArray = [];
 let namesArray = [];
 
 $(document).ready(function () {
-    $.getJSON('data.json', function(data){
+    $.getJSON(API, function(data){
         var airport_data = '';
         var i = 0;
         $.each(data, function(key, value){
