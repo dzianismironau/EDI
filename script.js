@@ -13,7 +13,7 @@ $(document).ready(function () {
         var airport_data = '';
         var i = 0;
         $.each(data, function(key, value){
-            if (i<=10) {
+            if (i<10) {
                 airport_data += '<tr>';
                 airport_data += '<td>'+value.id+'</td>';
                 airport_data += '<td>'+value.airport+'</td>';

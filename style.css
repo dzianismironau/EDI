@@ -57,6 +57,11 @@ button {
 
 /* Main */
 
+.table_info {
+    font-size: xx-large;
+    margin-bottom: 15px;
+}
+
 #airports_table {
     display: flex;
     flex-direction: row;
