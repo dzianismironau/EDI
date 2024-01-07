@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 body {
-    color: #FFF;
+    color: #fff;
     font: 16px/28px 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
     background-color: #000;
 }
@@ -79,3 +79,39 @@ button {
     width: 10%;
 }
 
+.chart_and_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.charts {
+    max-width: 1200px;
+    display: flex;
+    align-items: top;
+    margin-top: 15px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.chart_info {
+    margin-bottom: 2px;
+}
+
+#profit_chart {
+    vertical-align: text-top;
+    display: inline-block;
+} 
+#ownership_chart {
+    vertical-align: text-top;
+    display: inline-block;
+}
+ 
+#busyness_chart {
+    vertical-align: text-top;
+    display: inline-block;
+}
+
+#big_chart {
+    width: 100%;
+}

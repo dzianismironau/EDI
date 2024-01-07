@@ -9,6 +9,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Udemology/chartjs-plugin-sorting@main/chartjs-plugin-sorting.js"></script>
     </head>
     <body>
         <header id="header-section">
@@ -46,7 +47,7 @@
                                 <th>Airport Municipality</th>
                                 <th>Airport Country</th>
                                 <th>Airport Elevation</th>
-                                <th>Airport Profit</th>
+                                <th>Airport Profit ($)</th>
                                 <th>Airport Busyness</th>
                                 <th>Airport Ownership</th>
                             </tr>
@@ -54,10 +55,27 @@
                     </div>
                 </div>
             </section>
-                <div class="container">
-                    <canvas id="pie_chart"></canvas>
+            <section id="second_section">
+                <div class="charts">
+                    <div class="chart_and_text">
+                        <p class="chart_info">Number of airports by type of ownership:</p>
+                        <canvas id="ownership_chart"></canvas>
+                    </div>
+                    <div class="chart_and_text">
+                        <p class="chart_info">Number of airports by profit:</p>
+                        <canvas id="profit_chart"></canvas>
+                    </div>
+                    <div class="chart_and_text">
+                        <p class="chart_info">Top airports by profit:</p>
+                        <canvas id="busyness_chart"></canvas>
+                    </div>
                 </div>
+                <div class="charts">
+                    <canvas id="big_chart"></canvas>
+                </div>
+            </section>
         </main>
     </body>
     <script src="script.js"></script>
+    
 </html>
