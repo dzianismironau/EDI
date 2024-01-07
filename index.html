@@ -5,7 +5,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -20,7 +22,7 @@
                             <img class="top_img" src="icons8-up-arrow-52.png" alt="Back to the top" onclick="top_back()">
                         </button>
                     </div>
-                    <div class="project_name" onclick="top_back()">
+                    <div class="project_name">
                         <h1>EDI Project</h1>
                     </div>
                     <div class="participators_names">
@@ -56,26 +58,42 @@
                 </div>
             </section>
             <section id="second_section">
+                <p class="charts_title" data-aos="fade-up">Charts:</p>
                 <div class="charts">
-                    <div class="chart_and_text">
+                    <div class="chart" data-aos="slide-right">
                         <p class="chart_info">Number of airports by type of ownership:</p>
-                        <canvas id="ownership_chart"></canvas>
+                        <div>
+                            <canvas id="ownership_chart"></canvas>
+                        </div>
                     </div>
-                    <div class="chart_and_text">
+                    <div class="chart" data-aos="slide-up">
                         <p class="chart_info">Number of airports by profit:</p>
+                    <div>
                         <canvas id="profit_chart"></canvas>
                     </div>
-                    <div class="chart_and_text">
-                        <p class="chart_info">Top airports by profit:</p>
-                        <canvas id="busyness_chart"></canvas>
+                </div>
+                    <div class="chart" data-aos="slide-left">
+                        <p class="chart_info">Number of airports by busyness:</p>
+                        <div>
+                            <canvas id="busyness_chart"></canvas>
+                        </div>
                     </div>
                 </div>
-                <div class="charts">
-                    <canvas id="big_chart"></canvas>
+            </section>
+            <section>
+                <div class="container" data-aos="fade-up" data-aos-offset="300">
+                    <p class="last_chart">Average Profit:</p>
+                    <div class="charts">
+                        <canvas id="big_chart"></canvas>
+                    </div>
                 </div>
             </section>
         </main>
     </body>
     <script src="script.js"></script>
-    
+    <script>
+        AOS.init({
+            offset: 120,
+        });
+    </script>
 </html>

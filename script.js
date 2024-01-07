@@ -2,6 +2,7 @@ function top_back() {
     window.scrollTo(0,0)
 };
 
+
 const API = "https://my.api.mockaroo.com/airports.json?key=b5ac6640";
 let private = 0;
 let public = 0;
@@ -24,8 +25,9 @@ $(document).ready(function () {
         var airport_data = '';
         var i = 0;
         $.each(data, function(key, value){
+            const firstElement =  `<tr data-aos="slide-${i % 2 === 0 ? "left" : "right"}" data-aos-offset="120">`;
             if (i<10) {
-                airport_data += '<tr>';
+                airport_data += firstElement;
                 airport_data += '<td>'+value.id+'</td>';
                 airport_data += '<td>'+value.airport+'</td>';
                 airport_data += '<td>'+value.name+'</td>';
@@ -38,7 +40,6 @@ $(document).ready(function () {
                 airport_data += '</tr>';
             }
             i++;
-            //console.log(value.ownership)
 
             if (value.ownership === "private") {
                 private += 1;
@@ -47,7 +48,6 @@ $(document).ready(function () {
             } else {
                 mixed += 1;
             };
-            //console.log(1,value.ownership==='private',private)
             
             if (value.profit < 30000000.) {
                 smallProfit++;
@@ -147,7 +147,7 @@ $(document).ready(function () {
         const data = {
             labels: ['Small', 'Medium',  'Large', 'Huge'],
             datasets: [{
-                label: 'Airport Profits',
+                label: 'Airport Busyness',
                 data: itemData,
                 backgroundColor: [
                     'rgb(255, 99, 132)',
